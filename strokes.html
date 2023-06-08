@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+        <title>Tennis: An Overview</title>
+    </head>
+    <body>
+        <!--Navigation-->
+        <nav class = 'navbar navbar-expand-md navbar-light bg-light sticky-top'>
+        <div class = 'container-fluid'>
+            <p class = 'navbar-brand' href = '#'>CS50</p>
+            <p class = 'navbar-name'>Aliffi</p>
+            <button class = 'navbar-toggler' type = 'button' data-toggle = 'collapse' data-target = '#navbarResponsive'>
+                <span class = 'navbar-toggler-icon'></span>
+            </button>
+            <div class = 'collapse navbar-collapse' id = 'navbarResponsive'>
+                <ul class = 'navbar-nav ml-auto'>
+                    <li class = 'nav-item'>
+                        <a class ='nav-link' href ='index.html'>Game</a>
+                    </li>
+                    <li class = 'nav-item active'>
+                        <a class ='nav-link' href ='strokes.html'>Strokes</a>
+                    </li>
+                    <li class = 'nav-item'>
+                        <a class ='nav-link' href ='courts.html'>Courts</a>
+                    </li>
+                    <li class = 'nav-item'>
+                        <a class ='nav-link' href ='context.html'>Context</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        <!--Jumbotron-->
+        <div class = 'container-fluid'>
+        <div class = 'row jumbotron'>
+            <div class = 'col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10'>
+                <h1 class = 'lead'>Tennis</h1>
+                <h2 class = 'lead-sub'>Different strokes for different folks</h2>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!--Article-->
+        <div class = 'container-fluid article'>
+            <h1>Forehand</h1>
+            <p>The forehand stroke is where the ball is struck on the side of your body where your the dominant hand is used. Forehands are usually the stronger and more reliable stroke of players. It is typically played with only one hand but there are cases where two hands are used on the racket.</p>
+            <h1>Backhand</h1>
+            <p>The backhand stroke is when the ball is struck on the non-dominant side of the body. The stroke is typically swung with both hands however unlike the forehand stroke, it is not uncommon to see the opposite of this, where only one hand is used to complete the stroke.</p>
+            <h1>Serve</h1>
+            <p>The serve is one of the more difficult strokes to master. The serve is conducted at the start of every point and is how the ball is brought into play. This creates a huge opportunity for players to win points as the speed, spin and direction of the ball that comes into play is entirely dictated by the one who serves. Competitive tennis is structured around this concept: those who win the game where they serve holds, and those who win the game when they are not the ones serving breaks.</p>
+            <p>Below is a serve speed generator that randomly generates a number to display average serve speeds.</p>
+            <button type="button" class="btn btn-light" id = "serve-button">Serve!</button>
+            <p id = 'serve'></p>
+        </div>
+        <script>
+            const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+            let p = document.getElementById('serve');
+            let button = document.getElementById('serve-button');
+            button.addEventListener('click', () => {
+                let speed = random(100, 150);
+                p.innerHTML = `Your serve clocked in at ${speed} mph!`;
+            })
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </body>
+</html>
